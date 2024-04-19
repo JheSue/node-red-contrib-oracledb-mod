@@ -3,7 +3,7 @@
 
 <script type="text/x-red" data-template-name="oracle-server">
     <div class="form-row">
-        <ul style="background: #fff; min-width: 600px; margin-bottom: 20px;" id="node-config-oracle-server-tabs"></ul>
+        <ul style="min-width: 600px; margin-bottom: 20px;" id="node-config-oracle-server-tabs"></ul>
     </div>
     <div id="node-config-oracle-server-tabs-content" style="min-height: 170px;">
         <div id="oracle-server-tab-connection" style="display:none">
@@ -20,7 +20,7 @@
             </div>
             <div class="form-row">
                 <label for="node-config-input-instantclientpath" style="width: 150px;"><i class="fa fa-folder"></i> Instant Client Path</label>
-                <input class="input-append-left" type="text" id="node-config-input-instantclientpath" placeholder="/path/to/instantclient">
+                <input class="input-append-left" type="text" id="node-config-input-instantclientpath" placeholder="/usr/lib/instantclient">
             </div>
             <div id="wallet-container" class="connection-type">
                 <div class="form-row">
@@ -104,7 +104,7 @@
 
 <script type="text/x-red" data-template-name="oracledb">
     <div class="form-row">
-        <ul style="background: #fff; min-width: 600px; margin-bottom: 20px;" id="node-input-oracle-out-tabs"></ul>
+        <ul style="min-width: 600px; margin-bottom: 20px;" id="node-input-oracle-out-tabs"></ul>
     </div>
     <div id="node-input-oracle-out-tabs-content" style="min-height: 170px;">
         <div id="oracle-out-tab-connection" style="display:none">
@@ -183,7 +183,7 @@ RED.nodes.registerType("oracle-server", {
         connectionname: { value: "", required: true },
         tnsname: { value: "" },
         connectiontype: { value: "Classic" },
-        instantclientpath: { value: "" },
+        instantclientpath: { value: "/usr/lib/instantclient" },
         host: { value: "localhost", required: false },
         port: { value: 1521, required: false, validate: function (v) {
                 return v == null || !!v.match(/^(\s*|\d+|null)$/);

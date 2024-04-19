@@ -10,7 +10,7 @@ RED.nodes.registerType("oracle-server", {
         connectionname: { value: "", required: true },
         tnsname: { value: "" },
         connectiontype: { value: "Classic" },
-        instantclientpath: { value: "" },
+        instantclientpath: { value: "/usr/lib/instantclient" },
         host: { value: "localhost", required: false },
         port: { value: 1521, required: false, validate: function(v) {
             return v == null || !!v.match(/^(\s*|\d+|null)$/);
