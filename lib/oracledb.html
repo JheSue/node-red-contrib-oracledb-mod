@@ -48,6 +48,10 @@
                 <label for="node-config-input-reconnecttimeout" style="width: auto"><i class="fa fa-clock-o"></i> Reconnect interval (ms)</label>
                 <input type="text" id="node-config-input-reconnecttimeout" style="width:60px">
             </div>
+            <div class="form-row">
+                <label for="node-config-input-connectionpoolsize" style="width: auto"><i class="fa fa-clock-o"></i> Connection pool size</label>
+                <input type="text" id="node-config-input-connectionpoolsize" style="width:60px">
+            </div>
         </div>
         <div id="oracle-server-tab-security" style="display:none">
             <div class="form-row">
@@ -190,6 +194,7 @@ RED.nodes.registerType("oracle-server", {
             } },
         reconnect: { value: true },
         reconnecttimeout: { value: 5000, validate: RED.validators.number() },
+        connectionpoolsize: { value: 10, validate: RED.validators.number() },
         db: { value: "", required: false },
     },
     credentials: {
